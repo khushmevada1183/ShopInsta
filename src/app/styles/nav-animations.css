@@ -1,0 +1,176 @@
+/* Navigation Menu Animations */
+.nav-item {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: all 200ms linear;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(45deg, #4f46e5, #6366f1, #818cf8);
+  background-size: 300% 300%;
+  z-index: -1;
+  border-radius: inherit;
+  /* filter: blur(15px); */
+  opacity: 0;
+  transition: opacity 0.5s;
+  animation: gradient-rotate 5s linear infinite;
+}
+
+.nav-item:hover::after {
+  opacity: 0.15;
+}
+
+/* Dropdown Panel Animation */
+.dropdown-panel {
+  position: absolute;
+  margin-top: 0.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 14px 35px 0 rgba(9,9,12,0.15);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 200ms linear;
+}
+
+.dropdown-panel.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.dropdown-panel::before {
+  position: absolute;
+  top: -16px;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  content: '';
+  display: block;
+  z-index: 1;
+}
+
+.dropdown-panel::after {
+  position: absolute;
+  top: -8px;
+  left: 24px;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  content: '';
+  display: block;
+  z-index: 2;
+  box-shadow: -2px -2px 5px rgba(0,0,0,0.06);
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  position: relative;
+  transition: all 200ms linear;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  margin: 0.125rem 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #1f2937;
+  background-color: transparent;
+}
+
+.dropdown-item:hover {
+  color: #4f46e5;
+  background-color: #f3f4f6;
+  transform: translateX(5px);
+}
+
+.dropdown-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background: #4f46e5;
+  transition: width 0.2s ease;
+  transform: translateY(-50%);
+}
+
+.dropdown-item:hover::before {
+  width: 4px;
+}
+
+/* Chevron Animation */
+.chevron-icon {
+  transition: transform 200ms linear;
+}
+
+.chevron-icon.open {
+  transform: rotate(180deg);
+}
+
+@keyframes gradient-rotate {
+  0% {
+    transform: rotate(0deg);
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-position: 0% 50%;
+  }
+}
+
+/* Add Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Neon text effect for active/hover state */
+.nav-item:hover {
+  color: #4f46e5;
+  text-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Smooth transition for dropdown items */
+.dropdown-item {
+  position: relative;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  transform: translateX(5px);
+  color: #4f46e5;
+}
+
+.dropdown-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background: #4f46e5;
+  transition: width 0.2s ease;
+  transform: translateY(-50%);
+}
+
+.dropdown-item:hover::before {
+  width: 5px;
+} 

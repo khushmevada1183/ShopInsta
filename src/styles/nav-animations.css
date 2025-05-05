@@ -1,0 +1,75 @@
+/* Navigation Menu Animations */
+.nav-item {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(45deg, #4f46e5, #6366f1, #818cf8);
+  background-size: 300% 300%;
+  z-index: -1;
+  border-radius: 100vmax;
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 0.5s;
+  animation: gradient-rotate 5s linear infinite;
+}
+
+.nav-item:hover::after {
+  opacity: 0.15;
+}
+
+@keyframes gradient-rotate {
+  0% {
+    transform: rotate(0deg);
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-position: 0% 50%;
+  }
+}
+
+/* Neon text effect for active/hover state */
+.nav-item:hover {
+  color: #4f46e5;
+  text-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Smooth transition for dropdown items */
+.dropdown-item {
+  position: relative;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  transform: translateX(5px);
+  color: #4f46e5;
+}
+
+.dropdown-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background: #4f46e5;
+  transition: width 0.2s ease;
+  transform: translateY(-50%);
+}
+
+.dropdown-item:hover::before {
+  width: 5px;
+} 
