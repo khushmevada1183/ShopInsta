@@ -1,4 +1,4 @@
-# ShopVista - Modern E-commerce Landing Page
+# ShopInsta - Modern E-commerce Landing Page
 
 A modern, responsive e-commerce landing page built with Next.js 14, React 18, and Tailwind CSS.
 
@@ -30,7 +30,7 @@ A modern, responsive e-commerce landing page built with Next.js 14, React 18, an
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/khushmevada1183/ShopVista.git
+git clone https://github.com/khushmevada1183/ShopInsta.git
 ```
 
 2. Install dependencies:
