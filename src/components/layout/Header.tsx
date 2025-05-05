@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Bars3Icon, ShoppingBagIcon, UserIcon, HeartIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
 
@@ -14,13 +15,9 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <motion.h1 
-              className="text-2xl font-bold text-primary-600 font-accent"
-              whileHover={{ scale: 1.05 }}
-            >
-              ShopVista
-            </motion.h1>
+          <Link href="/" className="flex items-center space-x-2">
+            <Image src="/images/logo.png" alt="ShopInsta" width={40} height={40} />
+            <span className="text-xl font-bold">ShopInsta</span>
           </Link>
 
           {/* Search Bar */}

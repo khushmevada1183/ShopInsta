@@ -146,7 +146,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm">
-              © {new Date().getFullYear()} ShopVista. All rights reserved.
+              © {new Date().getFullYear()} ShopInsta. All rights reserved.
             </div>
             <div className="flex space-x-6">
               {footerSections.legalAndSettings.map((item) => (
